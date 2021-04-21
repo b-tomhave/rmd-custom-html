@@ -1,0 +1,40 @@
+.title { font-weight: bold;
+     font-style: normal;
+     margin-top: 0;
+     margin-bottom: 12pt;
+     font-size: 22pt;
+     line-height: 1;
+     color: #345A8A;
+     border-bottom: 2px solid black;
+}
+
+h1 { font-weight: 400;
+     font-style: normal;
+     margin-top: 20pt;
+     margin-bottom: 9pt;
+     font-size: 22pt;
+     line-height: 1;
+     color: #345A8A;
+}
+
+h2 { font-weight: 400;
+     font-style: normal;
+     margin-top: 20pt;
+     margin-bottom: 9pt;
+     font-size: 16pt;
+     line-height: 1;
+     color: #345A8A; }
+
+h3 {
+     font-weight: 400;
+     font-size: 15pt;
+     margin-top: 20pt;
+     margin-bottom: 9.36pt;
+     line-height: 1;
+     color: #345A8A; }
+
+.caption {
+  text-align: left;
+  font-size: 11pt;
+  font-style: italic;
+}

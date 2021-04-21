@@ -1,0 +1,5 @@
+name: Basic HTML Report
+description: >
+  Template for creating basic HTML report documents
+  with consistent style.
+create_dir: false

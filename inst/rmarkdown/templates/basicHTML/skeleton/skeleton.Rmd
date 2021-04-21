@@ -1,0 +1,89 @@
+---
+title: "Basic HTML Report"
+author: "Ben Tomhave"
+date: '`r format(Sys.time(), "%B %d, %Y")`'
+fontsize: 11pt
+output:
+  rmdHTMLCustom::basicHTML: 
+    toc_float:
+      collapsed: false
+      
+    # css: "<TO CHANGE CSS BUT NEW CSS PATH HERE>"
+    # in_header: "<TO CHANGE IN_HEADER IN INCLUDES SECTION ADD HTML PATH HERE>"
+    # before_body: "<TO CHANGE BEFORE_BODY IN INCLUDES SECTION ADD HTML PATH HERE>"
+    # after_body: "<TO CHANGE AFTER_BODY IN INCLUDES SECTION ADD HTML PATH HERE>"
+    # toc: "<TO SHOW/HIDE TOC CHANGE BINARY HERE>"
+    # toc_Depth: "<INTEGER HERE TO UPDATE LEVELS OF TOC>"
+    # toc_float: "<TO ANCHOR TOC CHANGE BINARY HERE>"
+    # All other html parameters should function as in normal default
+---
+
+
+```{r, echo=FALSE}
+# htmltools::img(src = knitr::image_uri(file.path(R.home("doc"), "html", "logo.jpg")), 
+#                alt = 'logo', 
+#                style = 'position:absolute; top:0; right:0; padding:10px;')
+```
+
+---
+```{r setup, include=FALSE}
+# Load Basic Libraries
+library(dplyr)
+library(data.table)
+library(ggplot2)
+library(leaflet)
+```
+# Introduction
+
+R markdown allows to easily format your text. You can add [links](www.r-graph-gallery.com), write in **bold** or *italic*. This is very well explained in the [Rstudio cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
+
+## Subsection Example
+Inline LaTeX equations can be written in a pair of dollar signs using the LaTeX syntax, e.g., $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$  math expressions of the display style can be written in a pair of double dollar signs, e.g., and the output looks like this: $$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$
+
+### Sub-subsection example
+Again sample text. 
+
+### Example Table
+```{r tables-mtcars, echo=FALSE}
+knitr::kable(iris[1:5, ], caption = 'Table 1: Example Table Caption')
+```
+
+### Example Map
+Below is a map that shows the location of the
+Department of Statistics, Iowa State University.
+
+```{r out.width='100%', echo=FALSE}
+leaflet() %>% addTiles() %>%
+  setView(-93.65, 42.0285, zoom = 17) %>%
+  addPopups(
+    -93.65, 42.0285,
+    'Here is the <b>Department of Statistics</b>, ISU'
+  )
+```
+
+#### Sub-sub-subsection Example
+Example numbered and bulleted list:
+
+1. the first item
+2. the second item
+3. the third item
+    - one unordered item
+    - one unordered item
+    
+Example blockquote
+
+> "I thoroughly disapprove of duels. If a man should challenge me,
+  I would take him kindly and forgivingly by the hand and lead him
+  to a quiet place and kill him."
+>
+> --- Mark Twain
+
+# Figure Captions
+
+To set a figure caption and dimensions use the `fig.cap`, `fig.width`, and `fig.height` (in inches) in the chunk options section.
+
+```{r fig, fig.cap = "Fig 1: MPG vs horsepower", fig.width=4.5, fig.height=3.5, cache=TRUE, message=FALSE}
+ggplot(mtcars, aes(hp, mpg)) +
+  geom_point()
+```
+

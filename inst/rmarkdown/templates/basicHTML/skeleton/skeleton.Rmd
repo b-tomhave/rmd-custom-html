@@ -4,7 +4,7 @@ author: "Ben Tomhave"
 date: '`r format(Sys.time(), "%B %d, %Y")`'
 fontsize: 11pt
 output:
-  rmdHTMLCustom::basicHTML: 
+  rmdCustomHTML::basicHTML: 
     toc_float:
       collapsed: false
       
